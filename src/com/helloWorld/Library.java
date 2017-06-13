@@ -11,14 +11,14 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import java.util.*;
+import java.util.HashMap;
 
-@Path("/library")
+@Path("/library")	// Root Resource
 public class Library {
 	HashMap lib = new HashMap<Integer, Book>();
 
 	@GET
-	@Path("/book/{isbn}")
+	@Path("/book/{isbn}")	// SUB Resource
 	@Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
 	public Response getBookIsbn(@PathParam("isbn") int isbn){
 		System.out.println("ISBN Search");
